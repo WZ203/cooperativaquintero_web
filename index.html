@@ -50,6 +50,7 @@
       --warn-bg: #fff7ed;
       --warn-line: #c05621;
       --radius: 16px;
+      --radius-lg: 22px;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --shadow-soft: 0 6px 18px rgba(15, 23, 42, 0.05);
       --max: 1180px;
@@ -922,18 +923,27 @@
           </div>
         </div>
 
-        <form class="card" id="leadForm">
+        <form
+          class="card"
+          id="leadForm"
+          action="https://formspree.io/f/mykbolbn"
+          method="POST"
+        >
           <div class="form-grid">
             <input class="field" type="text" name="nombre" placeholder="Nombre" required />
             <input class="field" type="text" name="apellidos" placeholder="Apellidos" required />
             <input class="field" type="email" name="email" placeholder="Email" required />
             <input class="field" type="tel" name="telefono" placeholder="Teléfono" required />
             <textarea name="mensaje" placeholder="Mensaje"></textarea>
+
+            <input type="hidden" name="_subject" value="Nuevo contacto desde cooperativaquintero.cl" />
+            <input type="hidden" name="_next" value="https://cooperativaquintero.cl/" />
+
             <button class="btn btn-primary full" type="submit">Solicitar información</button>
           </div>
 
           <p class="note">
-            Formulario visual listo. El envío real puede conectarse después con Formspree, Google Sheets, Resend u otra solución.
+            Al enviar este formulario, nos pondremos en contacto contigo a la brevedad.
           </p>
         </form>
       </div>
@@ -960,15 +970,5 @@
     </svg>
   </a>
 
-  <script>
-    const form = document.getElementById("leadForm");
-
-    if (form) {
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        alert("Formulario visual listo. El siguiente paso es conectar el envío real.");
-      });
-    }
-  </script>
 </body>
 </html>

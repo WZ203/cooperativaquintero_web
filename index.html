@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cooperativa Quintero | Proyecto inmobiliario</title>
-  <meta
-    name="description"
-    content="Accede a un departamento en primera línea en Quintero desde etapa inicial."
-  />
+  <title>Proyecto Quintero | Inversión Inmobiliaria</title>
+  <meta name="description" content="Proyecto de acceso colectivo a terreno en primera línea en Quintero." />
   <meta name="theme-color" content="#0f172a" />
 
   <style>
     :root {
-      --bg-dark: #0f172a;
-      --bg-dark-2: #111827;
-      --bg-light: #f1f5f9;
-      --bg-soft: #eaf1f7;
-      --white: #ffffff;
+      --bg: #f6f8fb;
+      --bg-soft: #eef2f7;
+      --surface: #ffffff;
       --text: #0f172a;
-      --muted: #475569;
-      --line: #dbe4ee;
-      --brand: #0ea5e9;
-      --brand-dark: #0284c7;
-      --success: #0f766e;
-      --warning: #b45309;
-      --max-width: 1180px;
-      --radius: 18px;
-      --shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
-      --shadow-soft: 0 8px 18px rgba(15, 23, 42, 0.06);
+      --muted: #5b6b82;
+      --line: #dbe3ee;
+      --primary: #0f172a;
+      --primary-2: #16233b;
+      --accent: #1d4ed8;
+      --accent-2: #1e40af;
+      --success-bg: #eef8f4;
+      --success-line: #2f855a;
+      --warn-bg: #fff7ed;
+      --warn-line: #c05621;
+      --radius: 16px;
+      --radius-lg: 22px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 6px 18px rgba(15, 23, 42, 0.05);
+      --max: 1180px;
     }
 
     * {
@@ -41,14 +41,9 @@
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background: var(--bg-light);
       line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     img {
@@ -56,8 +51,13 @@
       max-width: 100%;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .container {
-      width: min(var(--max-width), calc(100% - 32px));
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -66,12 +66,12 @@
       top: 0;
       z-index: 100;
       background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .topbar-inner {
-      min-height: 72px;
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -79,27 +79,28 @@
     }
 
     .brand {
-      font-size: 1.05rem;
+      color: #fff;
       font-weight: 800;
+      font-size: 1rem;
       letter-spacing: -0.02em;
-      color: var(--white);
+      white-space: nowrap;
     }
 
     .nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .nav a {
-      color: rgba(255, 255, 255, 0.92);
+      color: rgba(255,255,255,0.9);
       font-size: 0.95rem;
       transition: opacity 0.2s ease;
     }
 
     .nav a:hover {
-      opacity: 0.8;
+      opacity: 0.75;
     }
 
     .btn {
@@ -107,13 +108,13 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 14px 22px;
+      border: 0;
       border-radius: 999px;
+      padding: 14px 22px;
+      font: inherit;
       font-weight: 700;
-      border: none;
       cursor: pointer;
       transition: transform 0.15s ease, background 0.2s ease, opacity 0.2s ease;
-      font: inherit;
     }
 
     .btn:hover {
@@ -121,34 +122,35 @@
     }
 
     .btn-primary {
-      background: var(--brand);
-      color: var(--white);
+      background: var(--accent);
+      color: #fff;
       box-shadow: var(--shadow);
     }
 
     .btn-primary:hover {
-      background: var(--brand-dark);
+      background: var(--accent-2);
     }
 
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+    .btn-ghost {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.18);
     }
 
     .hero {
+      position: relative;
+      color: #fff;
       background:
-        linear-gradient(180deg, rgba(15, 23, 42, 0.60), rgba(15, 23, 42, 0.80)),
+        linear-gradient(180deg, rgba(15,23,42,0.58), rgba(15,23,42,0.82)),
         url("assets/img/hero.jpg") center/cover no-repeat;
-      color: var(--white);
-      padding: 96px 0 84px;
+      padding: 108px 0 84px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 32px;
-      align-items: center;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: end;
     }
 
     .eyebrow {
@@ -157,34 +159,35 @@
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
       font-size: 0.9rem;
       margin-bottom: 18px;
     }
 
-    h1, h2, h3 {
-      margin: 0 0 16px;
+    h1, h2, h3, h4 {
+      margin: 0 0 14px;
       line-height: 1.15;
       letter-spacing: -0.03em;
     }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      max-width: 11ch;
     }
 
     h2 {
-      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
     }
 
     h3 {
-      font-size: 1.14rem;
+      font-size: 1.15rem;
     }
 
     .lead {
-      font-size: 1.08rem;
-      color: rgba(255, 255, 255, 0.92);
       max-width: 58ch;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.08rem;
       margin-bottom: 24px;
     }
 
@@ -198,16 +201,17 @@
     .card,
     .hero-card,
     .metric,
-    .image-card,
+    .gallery-card,
     .timeline-item {
-      background: var(--white);
+      background: var(--surface);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow-soft);
-      border: 1px solid var(--line);
     }
 
+    .card,
     .hero-card,
-    .card {
+    .metric {
       padding: 24px;
     }
 
@@ -215,55 +219,41 @@
       color: var(--text);
     }
 
-    .hero-list,
-    .check-list {
+    .list-clean {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
       display: grid;
       gap: 12px;
     }
 
-    .hero-list li,
-    .check-list li {
+    .list-clean li {
       display: flex;
-      gap: 10px;
       align-items: flex-start;
+      gap: 10px;
       color: var(--muted);
     }
 
     .dot {
       width: 10px;
       height: 10px;
-      border-radius: 50%;
-      background: var(--brand);
-      flex: 0 0 auto;
+      border-radius: 999px;
+      background: var(--accent);
       margin-top: 8px;
+      flex: 0 0 auto;
     }
 
     .section {
-      padding: 72px 0;
+      padding: 76px 0;
     }
 
     .section-alt {
       background: var(--bg-soft);
     }
 
-    .section-dark {
-      background: var(--bg-dark);
-      color: var(--white);
-    }
-
-    .section-dark .section-head p,
-    .section-dark .card p,
-    .section-dark .caption,
-    .section-dark .small-note {
-      color: rgba(255,255,255,0.78);
-    }
-
     .section-head {
       max-width: 760px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     .section-head p {
@@ -290,45 +280,36 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .metric {
-      padding: 22px;
-    }
-
     .metric .value {
-      font-size: 1.8rem;
+      font-size: 1.85rem;
       font-weight: 800;
       margin-bottom: 6px;
-      line-height: 1.15;
+      line-height: 1.1;
     }
 
     .metric .label {
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.95rem;
     }
 
-    .image-card {
+    .gallery-card {
       overflow: hidden;
     }
 
-    .image-card img {
+    .gallery-card img {
       width: 100%;
-      height: 230px;
+      height: 240px;
       object-fit: cover;
     }
 
-    .image-card .caption {
-      padding: 16px 18px;
+    .gallery-card .caption {
+      padding: 16px 18px 18px;
       font-weight: 700;
+      color: var(--text);
     }
 
-    .image-wide img {
+    .gallery-wide img {
       height: 320px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
     }
 
     .timeline {
@@ -338,42 +319,58 @@
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 52px 1fr;
+      grid-template-columns: 54px 1fr;
       gap: 16px;
-      align-items: start;
       padding: 18px;
+      align-items: start;
     }
 
     .timeline-num {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
       display: grid;
       place-items: center;
       font-weight: 800;
-      color: var(--white);
-      background: var(--brand);
     }
 
-    .highlight-card {
-      border-left: 6px solid var(--success);
+    .callout {
+      padding: 22px;
+      border-radius: var(--radius);
+      border-left: 6px solid var(--success-line);
+      background: var(--success-bg);
     }
 
-    .warning-card {
-      border-left: 6px solid var(--warning);
+    .warning {
+      padding: 22px;
+      border-radius: var(--radius);
+      border-left: 6px solid var(--warn-line);
+      background: var(--warn-bg);
     }
 
     .small-note {
-      font-size: 0.92rem;
-      color: var(--muted);
       margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    .form-wrap {
+    .info-strip {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
       gap: 24px;
       align-items: start;
+    }
+
+    .contact-card p {
+      margin: 0 0 10px;
     }
 
     .form-grid {
@@ -385,24 +382,25 @@
     .field,
     textarea {
       width: 100%;
-      padding: 14px 16px;
-      border-radius: 14px;
       border: 1px solid #cbd5e1;
-      background: var(--white);
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 16px;
       font: inherit;
+      color: var(--text);
       outline: none;
+    }
+
+    .field:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.10);
     }
 
     textarea {
       min-height: 140px;
       resize: vertical;
       grid-column: 1 / -1;
-    }
-
-    .field:focus,
-    textarea:focus {
-      border-color: var(--brand);
-      box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12);
     }
 
     .full {
@@ -417,9 +415,9 @@
 
     .footer {
       margin-top: 24px;
-      padding: 28px 0;
-      background: var(--bg-dark);
-      color: rgba(255, 255, 255, 0.82);
+      background: var(--primary);
+      color: rgba(255,255,255,0.82);
+      padding: 30px 0;
     }
 
     .footer-inner {
@@ -431,49 +429,55 @@
 
     @media (max-width: 980px) {
       .hero-grid,
-      .form-wrap,
       .grid-2,
       .grid-3,
       .grid-4,
-      .gallery-grid {
+      .info-strip,
+      .contact-wrap {
         grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 720px) {
-      .topbar-inner {
-        min-height: 64px;
+      .container {
+        width: min(var(--max), calc(100% - 20px));
       }
 
       .nav {
         display: none;
       }
 
+      .topbar-inner {
+        min-height: 66px;
+      }
+
       .hero {
-        padding-top: 72px;
+        padding-top: 78px;
       }
 
       .form-grid {
         grid-template-columns: 1fr;
       }
 
-      .container {
-        width: min(var(--max-width), calc(100% - 20px));
+      .gallery-card img,
+      .gallery-wide img {
+        height: 220px;
       }
 
-      .image-card img,
-      .image-wide img {
-        height: 220px;
+      h1 {
+        max-width: none;
       }
     }
   </style>
 </head>
 <body>
+
   <header class="topbar">
     <div class="container topbar-inner">
-      <a href="#inicio" class="brand">Cooperativa Quintero Ltda. (en formación)</a>
+      <a href="#inicio" class="brand">Proyecto Quintero</a>
 
       <nav class="nav">
+        <a href="#resumen">Resumen</a>
         <a href="#proyecto">Proyecto</a>
         <a href="#ubicacion">Ubicación</a>
         <a href="#entorno">Entorno</a>
@@ -491,156 +495,177 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">
-            Estructura basada en normativa vigente en Chile, actualmente en proceso de formalización.
+            Proyecto en etapa inicial, estructurado bajo normativa vigente en Chile.
           </div>
 
-          <h1>Accede a un departamento en primera línea en Quintero desde etapa inicial</h1>
+          <h1>Acceso colectivo a terreno en primera línea en Quintero</h1>
 
           <p class="lead">
-            Participa en la adquisición del terreno y desarrollo del proyecto desde su origen.
-            Etapa actual: formación de grupo fundador.
+            Proyecto orientado a la adquisición de un activo inmobiliario escaso en el borde costero de Quintero, con potencial de valorización y desarrollo en etapas posteriores.
           </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contacto">Solicitar información</a>
-            <a class="btn btn-secondary" href="#inversion">Ver estructura</a>
+            <a class="btn btn-ghost" href="#inversion">Ver estructura</a>
           </div>
         </div>
 
         <aside class="hero-card">
-          <h3>Resumen del proyecto</h3>
-          <ul class="hero-list">
-            <li><span class="dot"></span><span>Proyecto inmobiliario en terreno de primera línea frente al mar.</span></li>
-            <li><span class="dot"></span><span>Modelo de participación conjunta mediante aportes de capital.</span></li>
-            <li><span class="dot"></span><span>Grupo fundador limitado a 60 participantes.</span></li>
-            <li><span class="dot"></span><span>Objetivo inicial: adquisición del terreno.</span></li>
+          <h3>Resumen ejecutivo</h3>
+          <ul class="list-clean">
+            <li><span class="dot"></span><span>Terreno en primera línea frente al mar, dentro de un entorno de oferta limitada.</span></li>
+            <li><span class="dot"></span><span>Participación en etapa temprana mediante grupo fundador acotado.</span></li>
+            <li><span class="dot"></span><span>Objetivo inicial centrado en la adquisición del activo base del proyecto.</span></li>
+            <li><span class="dot"></span><span>Etapas posteriores sujetas a estudios, definiciones y acuerdos de los participantes.</span></li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="proyecto">
+    <section class="section" id="resumen">
+      <div class="container">
+        <div class="section-head">
+          <h2>Resumen del proyecto</h2>
+          <p>
+            La propuesta busca articular el acceso conjunto a un terreno en primera línea en Quintero, permitiendo estructurar una entrada que, de forma individual, suele ser difícil de ejecutar sobre este tipo de activo costero.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Activo escaso</h3>
+            <p>
+              La primera línea costera es un activo limitado, especialmente cuando se combina con proyección residencial, ubicación consolidada y atractivo paisajístico.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Ingreso colectivo</h3>
+            <p>
+              El modelo considera la conformación de un grupo fundador que permita reunir el capital objetivo para la adquisición inicial del terreno.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="proyecto">
       <div class="container">
         <div class="section-head">
           <h2>El proyecto</h2>
           <p>
-            El proyecto contempla la adquisición de un terreno en primera línea en Quintero, con acceso directo al borde costero.
-            Se trata de un activo escaso, difícilmente replicable, con alto potencial de valorización asociado a su desarrollo inmobiliario.
+            El foco inicial es la compra del terreno. A partir de esa base, se abre la posibilidad de evaluar distintas alternativas de valorización y desarrollo, conforme a factibilidad técnica, jurídica, financiera y a las decisiones que adopten los participantes.
           </p>
         </div>
 
-        <div class="grid-2">
+        <div class="info-strip">
           <article class="card">
-            <h3>Escasez del activo</h3>
+            <h3>Etapa actual</h3>
             <p>
-              Ubicación con oferta limitada en primera línea costera, de difícil acceso individual mediante compra tradicional.
+              Formación del grupo fundador, presentación del proyecto y levantamiento de interés para estructurar la adquisición del activo.
             </p>
           </article>
 
           <article class="card">
-            <h3>Modelo de acceso</h3>
+            <h3>Etapa futura</h3>
             <p>
-              La inversión se distribuye entre múltiples participantes para viabilizar la adquisición del terreno en una etapa temprana del proyecto.
+              Una vez adquirido el terreno, el proyecto podrá evaluar alternativas de desarrollo, venta, estructuración de unidades u otras fórmulas compatibles con su naturaleza.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="ubicacion">
+    <section class="section" id="ubicacion">
       <div class="container">
         <div class="section-head">
           <h2>Ubicación estratégica</h2>
           <p>
-            Primera línea frente al mar, entorno natural consolidado, alta demanda por segunda vivienda y proyección turística y residencial.
+            El proyecto se sitúa en un contexto costero con fuerte identidad paisajística, cercanía al mar, valor de borde y atributos que lo posicionan tanto desde el uso como desde su atractivo inmobiliario.
           </p>
         </div>
 
         <div class="grid-4">
-          <article class="image-card">
-            <img src="assets/img/papagayo.jpg" alt="Vista costera de Quintero" />
-            <div class="caption">Entorno costero y localización privilegiada</div>
+          <article class="gallery-card">
+            <img src="assets/img/papagayo.jpg" alt="Vista costera en Quintero" />
+            <div class="caption">Entorno costero y localización de alto valor visual</div>
           </article>
 
-          <article class="image-card">
-            <img src="assets/img/yates.jpg" alt="Veleros en Quintero" />
-            <div class="caption">Vida náutica y borde costero</div>
+          <article class="gallery-card">
+            <img src="assets/img/yates.jpg" alt="Actividad náutica en Quintero" />
+            <div class="caption">Borde costero con vida náutica y paisaje consolidado</div>
           </article>
 
-          <article class="image-card">
-            <img src="assets/img/surf.jpg" alt="Surf en Quintero" />
-            <div class="caption">Deporte y relación directa con el mar</div>
+          <article class="gallery-card">
+            <img src="assets/img/surf.jpg" alt="Mar y actividades deportivas en Quintero" />
+            <div class="caption">Relación directa con el mar y actividades al aire libre</div>
           </article>
 
-          <article class="image-card">
-            <img src="assets/img/cousino.jpg" alt="Parque municipal en Quintero" />
-            <div class="caption">Áreas verdes y entorno urbano natural</div>
+          <article class="gallery-card">
+            <img src="assets/img/cousino.jpg" alt="Parque y entorno urbano natural en Quintero" />
+            <div class="caption">Áreas verdes y atributos de entorno complementarios</div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="entorno">
+    <section class="section section-alt" id="entorno">
       <div class="container">
         <div class="section-head">
           <h2>Entorno y calidad de vida</h2>
           <p>
-            Quintero combina borde costero, paisaje natural, actividades al aire libre y un entorno de alto valor paisajístico.
-            Este conjunto fortalece el atractivo del proyecto tanto desde la experiencia de uso como desde su valorización potencial.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-          <article class="image-card image-wide">
-            <img src="assets/img/buzo.jpg" alt="Agua cristalina en la costa" />
-            <div class="caption">Aguas claras y experiencia costera de alto valor visual</div>
-          </article>
-
-          <article class="image-card image-wide">
-            <img src="assets/img/atardecer.jpg" alt="Atardecer en Quintero" />
-            <div class="caption">Atardeceres y paisaje que refuerzan la identidad del lugar</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="vision">
-      <div class="container">
-        <div class="section-head">
-          <h2>Visión del proyecto</h2>
-          <p>
-            La iniciativa busca capturar el valor de un terreno único y proyectar un desarrollo coherente con su localización.
-            La imagen a continuación es referencial y muestra el tipo de estándar arquitectónico que podría explorarse en etapas posteriores.
+            El valor del proyecto no se explica solo por el terreno, sino también por la experiencia de lugar: paisaje, mar, amplitud visual, actividades costeras y una identidad territorial con fuerte componente residencial y recreativo.
           </p>
         </div>
 
         <div class="grid-2">
-          <article class="image-card image-wide">
-            <img src="assets/img/depa.jpg" alt="Imagen referencial de desarrollo inmobiliario" />
-            <div class="caption">Imagen referencial del potencial desarrollo</div>
+          <article class="gallery-card gallery-wide">
+            <img src="assets/img/buzo.jpg" alt="Agua clara y atractivo natural del litoral" />
+            <div class="caption">Atractivo natural del borde costero y experiencia visual diferenciadora</div>
           </article>
 
-          <article class="card warning-card">
-            <h3>Importante</h3>
-            <p>
-              La imagen presentada en esta sección es referencial y no constituye una promesa específica de diseño, superficie, número de pisos,
-              unidades, terminaciones ni aprobación municipal. La definición final del proyecto dependerá de estudios, factibilidad, estructura legal,
-              decisiones de los socios y cumplimiento normativo.
-            </p>
-            <p class="small-note">
-              Esta sección busca mostrar una visión de potencial, no una especificación definitiva.
-            </p>
+          <article class="gallery-card gallery-wide">
+            <img src="assets/img/atardecer.jpg" alt="Atardecer en la costa de Quintero" />
+            <div class="caption">Paisaje, horizonte y valor emocional del lugar</div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="inversion">
+    <section class="section" id="vision">
+      <div class="container">
+        <div class="section-head">
+          <h2>Visión del proyecto</h2>
+          <p>
+            La siguiente imagen busca ilustrar una referencia de estándar y lenguaje arquitectónico. Su uso es conceptual y tiene por finalidad apoyar la comprensión del potencial del activo en una etapa posterior.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="gallery-card gallery-wide">
+            <img src="assets/img/depa.jpg" alt="Imagen referencial del potencial desarrollo" />
+            <div class="caption">Imagen referencial del potencial desarrollo</div>
+          </article>
+
+          <aside class="warning">
+            <h3>Importante</h3>
+            <p>
+              La imagen presentada en esta sección es referencial y no constituye una promesa específica de diseño, superficie, cantidad de unidades, alturas, terminaciones, aprobación municipal ni ejecución futura en esos términos exactos.
+            </p>
+            <p class="small-note">
+              La materialización definitiva dependerá de estudios, factibilidad, normativa, estructura legal, financiamiento y acuerdos de los participantes.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="inversion">
       <div class="container">
         <div class="section-head">
           <h2>Estructura de la inversión</h2>
           <p>
-            Ingreso como socio fundador mediante aporte de capital, formando parte del grupo que impulsará la adquisición del terreno y el desarrollo del proyecto.
+            La participación se concibe mediante aporte de capital como integrante del grupo fundador que permitirá la adquisición del terreno y la estructuración inicial del proyecto.
           </p>
         </div>
 
@@ -652,17 +677,17 @@
 
           <div class="metric">
             <div class="value">60</div>
-            <div class="label">Número objetivo de socios</div>
+            <div class="label">Número objetivo de participantes</div>
           </div>
 
           <div class="metric">
             <div class="value">$2.220.000.000</div>
-            <div class="label">Monto total a recaudar</div>
+            <div class="label">Meta total de recaudación</div>
           </div>
 
           <div class="metric">
             <div class="value">1ª línea</div>
-            <div class="label">Tipo de activo</div>
+            <div class="label">Naturaleza del activo</div>
           </div>
         </div>
 
@@ -670,29 +695,29 @@
           <article class="card">
             <h3>Destino de fondos</h3>
             <p>
-              Adquisición del terreno. El monto considera margen para costos asociados, pero no incluye costos futuros de desarrollo o construcción.
+              El objetivo principal es la adquisición del terreno. Los costos futuros de desarrollo, estudios o construcción corresponden a etapas posteriores y no forman parte del alcance base indicado en esta presentación inicial.
             </p>
           </article>
 
           <article class="card">
             <h3>Qué obtiene el participante</h3>
-            <ul class="check-list">
-              <li><span class="dot"></span><span>Participación en el proyecto desde su etapa inicial.</span></li>
-              <li><span class="dot"></span><span>Acceso preferente a unidades del desarrollo, según condiciones a definir.</span></li>
-              <li><span class="dot"></span><span>Posibilidad de acceder a una propiedad en primera línea.</span></li>
-              <li><span class="dot"></span><span>Exposición a la valorización del terreno y del proyecto.</span></li>
+            <ul class="list-clean">
+              <li><span class="dot"></span><span>Ingreso a una etapa temprana de estructuración del proyecto.</span></li>
+              <li><span class="dot"></span><span>Participación en un activo escaso con potencial de valorización.</span></li>
+              <li><span class="dot"></span><span>Posibilidad de intervenir en definiciones futuras según estructura y acuerdos aplicables.</span></li>
+              <li><span class="dot"></span><span>Exposición al valor del terreno y a su proyección de desarrollo.</span></li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="fases">
+    <section class="section" id="fases">
       <div class="container">
         <div class="section-head">
           <h2>Fases del proyecto</h2>
           <p>
-            Cada participante adquiere una participación proporcional en el proyecto, con derechos económicos sobre su valorización y desarrollo.
+            La ejecución se entiende en etapas, comenzando por la formación del grupo fundador y la adquisición del terreno, para luego evaluar y definir el curso del proyecto en su fase de desarrollo.
           </p>
         </div>
 
@@ -701,7 +726,7 @@
             <div class="timeline-num">1</div>
             <div>
               <h3>Formación del grupo fundador</h3>
-              <p>Convocatoria y conformación inicial de participantes.</p>
+              <p>Convocatoria, levantamiento de interés y conformación inicial de participantes.</p>
             </div>
           </article>
 
@@ -709,82 +734,87 @@
             <div class="timeline-num">2</div>
             <div>
               <h3>Adquisición del terreno</h3>
-              <p>Recaudación y cierre de compra del activo.</p>
+              <p>Estructuración y cierre de la etapa destinada a la compra del activo base del proyecto.</p>
             </div>
           </article>
 
           <article class="timeline-item">
             <div class="timeline-num">3</div>
             <div>
-              <h3>Desarrollo del proyecto</h3>
-              <p>Definición de estrategia, diseño y estructura.</p>
+              <h3>Evaluación y desarrollo</h3>
+              <p>Análisis de alternativas, estrategia, diseño, factibilidad y estructura de ejecución.</p>
             </div>
           </article>
 
           <article class="timeline-item">
             <div class="timeline-num">4</div>
             <div>
-              <h3>Ejecución</h3>
-              <p>Implementación del proyecto inmobiliario.</p>
+              <h3>Implementación</h3>
+              <p>Desarrollo de la alternativa finalmente aprobada conforme a criterios técnicos, normativos y económicos.</p>
             </div>
           </article>
         </div>
 
         <div class="card" style="margin-top: 24px;">
           <p style="margin: 0; color: var(--muted);">
-            La estrategia final —venta, desarrollo o asignación de unidades— será definida por los socios.
-            Los retornos dependerán de la forma en que se ejecute el proyecto.
+            La fórmula final de salida, desarrollo, asignación de unidades o valorización dependerá de la estructura definitiva del proyecto y de las decisiones que se adopten en la etapa correspondiente.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="seguridad">
+    <section class="section section-alt" id="seguridad">
       <div class="container">
         <div class="section-head">
-          <h2>Seguridad del proyecto</h2>
+          <h2>Seguridad y criterios de estructura</h2>
           <p>
-            Proyecto estructurado bajo normativa vigente en Chile, con participación mediante entidad legal en proceso de formalización y decisiones definidas en conjunto por los participantes.
+            La iniciativa se plantea bajo una lógica formal, sujeta a normativa vigente, definición de estructura legal y mecanismos de decisión acordes a la naturaleza colectiva del proyecto.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
             <h3>Marco legal</h3>
-            <p>La estructura considera formalización y funcionamiento dentro de normativa aplicable en Chile.</p>
+            <p>
+              El proyecto considera un encuadre dentro de normativa vigente en Chile y una formalización acorde a su estructura.
+            </p>
           </article>
 
           <article class="card">
-            <h3>Destino de fondos</h3>
-            <p>Uso orientado al desarrollo del proyecto y a la adquisición del activo base.</p>
+            <h3>Destino del capital</h3>
+            <p>
+              La presentación actual se encuentra enfocada en la adquisición del activo base del proyecto.
+            </p>
           </article>
 
           <article class="card">
             <h3>Gobernanza</h3>
-            <p>Las decisiones relevantes serán definidas en conjunto por los participantes.</p>
+            <p>
+              Las decisiones relevantes deberán adoptarse conforme al mecanismo que se defina para la participación conjunta.
+            </p>
           </article>
         </div>
 
-        <div class="card highlight-card" style="margin-top: 24px;">
+        <div class="callout" style="margin-top: 24px;">
           <h3>Grupo fundador limitado</h3>
-          <p style="margin-bottom: 0;">
-            El proyecto contempla un número acotado de participantes. Una vez completado el grupo fundador, el ingreso se cerrará.
+          <p style="margin: 0;">
+            El ingreso se plantea para un número acotado de participantes. Una vez completado ese grupo, la etapa inicial se cerrará.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="contacto">
-      <div class="container form-wrap">
+    <section class="section" id="contacto">
+      <div class="container contact-wrap">
         <div>
           <div class="section-head">
-            <h2>Postula al grupo fundador</h2>
+            <h2>Solicita información</h2>
             <p>
-              Completa tus datos para recibir información del proyecto y ser contactado.
+              Si te interesa conocer más sobre la etapa actual del proyecto, puedes completar el formulario para ser contactado y recibir antecedentes adicionales.
             </p>
           </div>
 
-          <div class="card">
+          <div class="card contact-card">
             <p><strong>Dirección:</strong> Avendaño #453, Quintero</p>
             <p><strong>Teléfono:</strong> +56 9 9991 7298</p>
             <p><strong>Email:</strong> info@sitio.com</p>
@@ -798,11 +828,11 @@
             <input class="field" type="email" name="email" placeholder="Email" required />
             <input class="field" type="tel" name="telefono" placeholder="Teléfono" required />
             <textarea name="mensaje" placeholder="Mensaje"></textarea>
-            <button class="btn btn-primary full" type="submit">Enviar</button>
+            <button class="btn btn-primary full" type="submit">Solicitar información</button>
           </div>
 
           <p class="note">
-            Este formulario está listo a nivel visual. Luego conectamos el envío real con Formspree, Google Sheets o el servicio que prefieras.
+            Formulario visual listo. El envío real puede conectarse después con Formspree, Google Sheets, Resend u otra solución.
           </p>
         </form>
       </div>
@@ -811,7 +841,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div>© 2026 Cooperativa Quintero Ltda. (en formación)</div>
+      <div>© 2026 Proyecto Quintero</div>
       <div>Sitio estático preparado para GitHub Pages</div>
     </div>
   </footer>
@@ -819,10 +849,12 @@
   <script>
     const form = document.getElementById("leadForm");
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      alert("Formulario visual listo. El siguiente paso es conectar el envío real.");
-    });
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Formulario visual listo. El siguiente paso es conectar el envío real.");
+      });
+    }
   </script>
 </body>
 </html>
